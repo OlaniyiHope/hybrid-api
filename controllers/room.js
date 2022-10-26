@@ -1,5 +1,5 @@
-import Room from "../../models/Room.js";
-import Hotel from "../../models/Hotel.js";
+import Room from "../models/Room.js";
+import Hotel from "../models/Hotel.js";
 import { createError } from "../utils/error.js";
 
 export const createRoom = async (req, res, next) => {
@@ -39,7 +39,7 @@ export const updateRoomAvailability = async (req, res, next) => {
       { "roomNumbers._id": req.params.id },
       {
         $push: {
-          "roomNumbers.$.unavailableDates": req.body.dates
+          "roomNumbers.$.unavailableDates": req.body.dates,
         },
       }
     );
