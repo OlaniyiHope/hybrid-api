@@ -49,4 +49,4 @@ app.listen(8800, () => {
   connect();
   console.log("Connected to backend.");
 });
-module.exports = app;
+export default app;
