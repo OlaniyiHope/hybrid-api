@@ -5,10 +5,10 @@ import {
   createProperties,
   deleteProperties,
   getProperties,
-  getproperties,
+  getpropertiess,
   updateProperties,
 } from "../controllers/properties.js";
-import Properties from "../models/Properties";
+import Properties from "../models/Properties.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 const router = express.Router();
 
@@ -24,7 +24,7 @@ router.delete("/:id", deleteProperties);
 router.get("/find/:id", getProperties);
 //GET ALL
 
-router.get("/", getproperties);
+router.get("/", getpropertiess);
 router.get("/countByCity", countByCity);
 router.get("/countByType", countByType);
 
