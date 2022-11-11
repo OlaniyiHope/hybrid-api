@@ -40,4 +40,4 @@ const propertieschema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("Hotel", propertieschema);
+export default mongoose.model("Properties", propertieschema);
