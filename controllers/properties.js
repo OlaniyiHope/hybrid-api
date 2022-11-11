@@ -39,14 +39,14 @@ export const getProperties = async (req, res, next) => {
     next(err);
   }
 };
-export const getproperties = async (req, res, next) => {
+export const getpropertiess = async (req, res, next) => {
   const { min, max, ...others } = req.query;
   try {
-    const properties = await Properties.find({
+    const propertiess = await Properties.find({
       ...others,
       cheapestPrice: { $gt: min | 1, $lt: max || 999 },
     }).limit(req.query.limit);
-    res.status(200).json(properties);
+    res.status(200).json(propertiess);
   } catch (err) {
     next(err);
   }

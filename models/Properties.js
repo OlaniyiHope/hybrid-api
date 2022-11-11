@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const propertieschema = new mongoose.Schema({
+const Propertieschema = new mongoose.Schema({
   photos: {
     type: [String],
   },
@@ -40,4 +40,4 @@ const propertieschema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("Properties", propertieschema);
+export default mongoose.model("Properties", Propertieschema);
