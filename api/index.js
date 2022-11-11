@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "../routes/auth.js";
 import usersRoute from "../routes/users.js";
-import hotelsRoute from "../routes/hotels.js";
+import propertiesRoute from "../routes/properties.js";
 import roomsRoute from "../routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -31,7 +31,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
-app.use("/api/hotels", hotelsRoute);
+app.use("/api/properties", propertiesRoute);
 app.use("/api/rooms", roomsRoute);
 
 app.use((err, req, res, next) => {
