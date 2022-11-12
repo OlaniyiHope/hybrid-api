@@ -16,7 +16,7 @@ const router = express.Router();
 router.post("/", createProperties);
 
 //UPDATE
-router.put("/:id", verifyAdmin, updateProperties);
+router.put("/:id", updateProperties);
 //DELETE
 router.delete("/:id", deleteProperties);
 //GET
