@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 const Propertieschema = new mongoose.Schema({
   photos: {
     type: [String],
+    required: true,
   },
   name: {
     type: String,
@@ -37,6 +38,9 @@ const Propertieschema = new mongoose.Schema({
   featured: {
     type: Boolean,
     default: false,
+  },
+  rooms: {
+    type: [String],
   },
 });
 
