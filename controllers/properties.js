@@ -1,5 +1,4 @@
 import Properties from "../models/Properties.js";
-import Room from "../models/Room.js";
 
 export const createProperties = async (req, res, next) => {
   const newProperties = new Properties(req.body);

@@ -39,9 +39,7 @@ const Propertieschema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  rooms: {
-    type: [String],
-  },
+
 });
 
 export default mongoose.model("Properties", Propertieschema);
