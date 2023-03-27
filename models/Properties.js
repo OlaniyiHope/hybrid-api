@@ -19,7 +19,7 @@ const Propertieschema = new mongoose.Schema({
 
   distance: {
     type: Number,
-    required: true,
+    required: false,
   },
 
   detail: {
@@ -39,7 +39,6 @@ const Propertieschema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-
 });
 
 export default mongoose.model("Properties", Propertieschema);
