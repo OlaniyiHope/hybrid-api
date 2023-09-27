@@ -6,7 +6,6 @@ import usersRoute from "../routes/users.js";
 import propertiesRoute from "../routes/properties.js";
 import roomsRoute from "../routes/rooms.js";
 import cookieParser from "cookie-parser";
-import createProxyMiddleware from "http-proxy-middleware";
 import cors from "cors"; // Import the cors middleware
 
 const app = express();
@@ -34,15 +33,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/properties", propertiesRoute);
 app.use("/api/rooms", roomsRoute);
-
-// Define a proxy route
-app.use(
-  "/api",
-  createProxyMiddleware({
-    target: "https://hybridapi-b5a8919346f7.herokuapp.com",
-    changeOrigin: true,
-  })
-);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
