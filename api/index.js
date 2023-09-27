@@ -7,7 +7,7 @@ import propertiesRoute from "../routes/properties.js";
 import roomsRoute from "../routes/rooms.js";
 import cookieParser from "cookie-parser";
 import createProxyMiddleware from "http-proxy-middleware";
-import cors from "cors";
+import cors from "cors"; // Import the cors middleware
 
 const app = express();
 dotenv.config();
@@ -15,18 +15,18 @@ dotenv.config();
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
-    console.log("Connected to mongoDB.");
+    console.log("Connected to MongoDB.");
   } catch (error) {
-    console.log("Connected to vercel.");
+    console.log("MongoDB connection error:", error);
   }
 };
 
 mongoose.connection.on("disconnected", () => {
-  console.log("mongoDB has disconnected!");
+  console.log("MongoDB has disconnected!");
 });
 
-//middlewares
-app.use(cors());
+// Middlewares
+app.use(cors()); // Enable CORS
 app.use(cookieParser());
 app.use(express.json());
 
@@ -34,6 +34,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/properties", propertiesRoute);
 app.use("/api/rooms", roomsRoute);
+
 // Define a proxy route
 app.use(
   "/api",
@@ -58,4 +59,3 @@ app.listen(process.env.PORT || 8800, () => {
   connect();
   console.log("Connected to the backend.");
 });
-export default app;
